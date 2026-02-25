@@ -146,15 +146,12 @@
         }
 
         .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
+            opacity: 1; /* Изменено с 0 на 1 */
+            transform: translateY(0); /* Изменено */
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        /* Удален класс .visible так как он больше не нужен */
 
         .lang-switch {
             position: fixed;
@@ -289,147 +286,6 @@
             width: 24px;
             height: 24px;
             image-rendering: pixelated;
-        }
-
-        .projects-section {
-            min-height: 50vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 40px 20px;
-        }
-
-        .projects-title {
-            font-size: clamp(16px, 4vw, 24px);
-            margin-bottom: 40px;
-            text-shadow: 4px 4px 0 #002288;
-        }
-
-        .projects-slider {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .projects-slider::before,
-        .projects-slider::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            width: 100px;
-            height: 100%;
-            z-index: 20;
-            pointer-events: none;
-        }
-
-        .projects-slider::before {
-            left: 0;
-            background: linear-gradient(90deg, #0a0f2e 0%, transparent 100%);
-        }
-
-        .projects-slider::after {
-            right: 0;
-            background: linear-gradient(-90deg, #0a0f2e 0%, transparent 100%);
-        }
-
-        .projects-track {
-            display: flex;
-            gap: 30px;
-            animation: scroll 30s linear infinite;
-            width: fit-content;
-            padding: 0 20px;
-        }
-
-        .projects-track:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(calc(-100% + 100vw));
-            }
-        }
-
-        .project-card {
-            min-width: 280px;
-            background: rgba(10, 20, 46, 0.95);
-            backdrop-filter: blur(2px);
-            border: 4px solid #00b7ff;
-            box-shadow: 8px 8px 0 #002288;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            transition: all 0.2s;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .project-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: 12px 12px 0 #002288;
-            border-color: #ffcc00;
-        }
-
-        .project-card:active {
-            transform: translate(4px, 4px);
-            box-shadow: 4px 4px 0 #002288;
-        }
-
-        .project-image {
-            width: 100%;
-            height: 120px;
-            background: #0a142e;
-            border: 3px solid #7df9ff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .project-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .project-info {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .project-name {
-            font-size: 18px;
-            color: #7df9ff;
-        }
-
-        .project-status {
-            font-size: 10px;
-            padding: 5px 10px;
-            border: 2px solid currentColor;
-            display: inline-block;
-            width: fit-content;
-        }
-
-        .status-yellow {
-            color: #ffcc00;
-            border-color: #ffcc00;
-        }
-
-        .status-green {
-            color: #00ff00;
-            border-color: #00ff00;
-        }
-
-        .status-red {
-            color: #ff4444;
-            border-color: #ff4444;
         }
 
         .support-page {
@@ -579,15 +435,7 @@
             animation: blink 1.5s infinite;
         }
 
-        @media (max-width: 600px) {
-            .projects-track {
-                animation-duration: 20s;
-            }
-            
-            .project-card {
-                min-width: 220px;
-            }
-            
+        @media (max-width: 600px) {            
             .extra-btn {
                 min-width: 100%;
             }
@@ -609,30 +457,14 @@
             }
         }
 
-        @media (max-width: 380px) {
-            .project-card {
-                min-width: 180px;
-            }
-            
-            .project-name {
-                font-size: 14px;
-            }
-            
-            .project-status {
-                font-size: 8px;
-            }
-        }
-
         @media (hover: none) and (pointer: coarse) {
             .social-btn:hover,
-            .project-card:hover,
             .wallet-item:hover,
             .extra-btn:hover {
                 transform: none;
             }
             
             .social-btn:active,
-            .project-card:active,
             .wallet-item:active,
             .extra-btn:active {
                 transform: translate(4px, 4px);
@@ -672,7 +504,7 @@
                         <a href="https://www.youtube.com/@Netronru" target="_blank" class="social-btn">
                             <img src="YouTube.png" alt="YouTube" onerror="this.src='https://via.placeholder.com/50x50/0a142e/00b7ff?text=YT'">
                         </a>
-                        <a href="https://t.me/netronru" target="_blank" class="social-btn">
+                        <a href="https://t.me/+sqm5Aklif1ZmMTNi" target="_blank" class="social-btn">
                             <img src="Telegram.png" alt="Telegram" onerror="this.src='https://via.placeholder.com/50x50/0a142e/00b7ff?text=TG'">
                         </a>
                     </div>
@@ -684,74 +516,6 @@
                 </div>
             </div>
         </main>
-
-        <section id="projects" class="projects-section">
-            <h2 class="projects-title fade-in" data-ru="Мои проекты" data-en="My Projects">Мои проекты</h2>
-            
-            <div class="projects-slider fade-in">
-                <div class="projects-track">
-                    <a href="https://t.me/dolphinzone" target="_blank" class="project-card">
-                        <div class="project-image">
-                            <img src="DZone.png" alt="DZone" onerror="this.src='https://via.placeholder.com/240x120/0a142e/ffcc00?text=DZONE'">
-                        </div>
-                        <div class="project-info">
-                            <span class="project-name">DZone</span>
-                            <span class="project-status status-yellow" data-ru="• ВРЕМЕННО ЗАКРЫТ" data-en="• TEMPORARILY CLOSED">• ВРЕМЕННО ЗАКРЫТ</span>
-                        </div>
-                    </a>
-
-                    <a href="https://gelenpedia.ru" target="_blank" class="project-card">
-                        <div class="project-image">
-                            <img src="gelenpedia.png" alt="GelenPedia" onerror="this.src='https://via.placeholder.com/240x120/0a142e/00ff00?text=GELENPEDIA'">
-                        </div>
-                        <div class="project-info">
-                            <span class="project-name">GelenPedia</span>
-                            <span class="project-status status-green" data-ru="• РАБОТАЕТ" data-en="• ACTIVE">• РАБОТАЕТ</span>
-                        </div>
-                    </a>
-
-                    <a href="https://t.me/fzs_server" target="_blank" class="project-card">
-                        <div class="project-image">
-                            <img src="fzs.png" alt="ФЖС" onerror="this.src='https://via.placeholder.com/240x120/0a142e/ff4444?text=ФЖС'">
-                        </div>
-                        <div class="project-info">
-                            <span class="project-name">ФЖС</span>
-                            <span class="project-status status-red" data-ru="• ЗАКРЫТ НАВСЕГДА" data-en="• PERMANENTLY CLOSED">• ЗАКРЫТ НАВСЕГДА</span>
-                        </div>
-                    </a>
-
-                    <a href="https://t.me/dolphinzone" target="_blank" class="project-card">
-                        <div class="project-image">
-                            <img src="DZone.png" alt="DZone" onerror="this.src='https://via.placeholder.com/240x120/0a142e/ffcc00?text=DZONE'">
-                        </div>
-                        <div class="project-info">
-                            <span class="project-name">DZone</span>
-                            <span class="project-status status-yellow" data-ru="• ВРЕМЕННО ЗАКРЫТ" data-en="• TEMPORARILY CLOSED">• ВРЕМЕННО ЗАКРЫТ</span>
-                        </div>
-                    </a>
-
-                    <a href="https://gelenpedia.ru" target="_blank" class="project-card">
-                        <div class="project-image">
-                            <img src="gelenpedia.png" alt="GelenPedia" onerror="this.src='https://via.placeholder.com/240x120/0a142e/00ff00?text=GELENPEDIA'">
-                        </div>
-                        <div class="project-info">
-                            <span class="project-name">GelenPedia</span>
-                            <span class="project-status status-green" data-ru="• РАБОТАЕТ" data-en="• ACTIVE">• РАБОТАЕТ</span>
-                        </div>
-                    </a>
-
-                    <a href="https://t.me/fzs_server" target="_blank" class="project-card">
-                        <div class="project-image">
-                            <img src="fzs.png" alt="ФЖС" onerror="this.src='https://via.placeholder.com/240x120/0a142e/ff4444?text=ФЖС'">
-                        </div>
-                        <div class="project-info">
-                            <span class="project-name">ФЖС</span>
-                            <span class="project-status status-red" data-ru="• ЗАКРЫТ НАВСЕГДА" data-en="• PERMANENTLY CLOSED">• ЗАКРЫТ НАВСЕГДА</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
 
         <section id="support" style="scroll-margin-top: 50px;">
             <div class="container">
@@ -831,8 +595,7 @@
         function setLanguage(lang) {
             elementsToTranslate.forEach(el => {
                 if (el.dataset[lang]) {
-                    if (el.classList.contains('project-status') || 
-                        el.classList.contains('back-link') || 
+                    if (el.classList.contains('back-link') || 
                         el.classList.contains('extra-btn') ||
                         el.tagName === 'SPAN' || 
                         el.tagName === 'H1' || 
@@ -862,21 +625,7 @@
         const savedLang = localStorage.getItem('preferred-lang') || 'ru';
         setLanguage(savedLang);
 
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        function checkFade() {
-            fadeElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
-                
-                if (rect.top < windowHeight - 100) {
-                    el.classList.add('visible');
-                }
-            });
-        }
-
-        window.addEventListener('load', checkFade);
-        window.addEventListener('scroll', checkFade);
+        // Удалена функция checkFade
 
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -958,7 +707,7 @@
             text-decoration: none;
             color: inherit;
         }
-        #support, #projects {
+        #support {
             background-color: rgba(10, 15, 46, 0.9);
             border-top: 8px solid #00b7ff;
             box-shadow: 0 -10px 0 #002288;
